@@ -54,8 +54,50 @@ const projects = [
     id: 7,
     title: "Charity Organization (Rebuild)",
     description: "This website belongs to a charity organization dedicated to supporting homeless animals. we just rebuild it. for lesson",
-    imageSrc: "../Screenshot 2025-03-27 120319.png",
+    imageSrc: "../Screenshot 2025-03-27 115551.png",
     websiteLink: "https://quiz-gsap-scroll-trigger-bi21.vercel.app//"
+  },
+  {
+    id: 8,
+    title: "Paste (Rebuild)",
+    description: "The Paste app appears to be a clipboard manager designed to improve efficiency and organization. Based on its promotional banner, the app has received a major update with a new look and feel, emphasizing a more intuitive and user-centric experience.",
+    imageSrc: "../Screenshot 2025-03-27 120319.png",
+    websiteLink: "https://sunaryo-mid-test-gsap-e86f.vercel.app/"
+  },
+  {
+    id: 9,
+    title: "Adive Generator",
+    description: "The Adive generator app is a user-friendly interface that allows users to generate random adjectives and nouns, which they can then use to create unique and creative names for their projects.",
+    imageSrc: "../Screenshot 2025-03-27 120348.png",
+    websiteLink: "https://advice-generator-coral-iota.vercel.app/"
+  },
+  {
+    id: 10,
+    title: "Weight Calculator",
+    description: "The weight Calculator app is a user-friendly interface that allows users to calculate their weight based on their height and age.",
+    imageSrc: "../Screenshot 2025-07-26 111335.png",
+    websiteLink: "https://calculator-sunaryo.vercel.app/"
+  },
+  {
+    id: 10,
+    title: "Latest News",
+    description: "The Latest News app is a user-friendly interface that allows users to read the latest news from the world of aviation, such as teh Air India news, and the Hijack Plane news.",
+    imageSrc: "../Screenshot 2025-07-26 113733.png",
+    websiteLink: "https://latest-news-sunaryo.vercel.app/"
+  },
+  {
+    id: 11,
+    title: "Brandingfolio (Rebuild)",
+    description: "The Brandingfolio app is a user-friendly interface that allows users to create and share their branding projects, such as logos, websites, and social media profiles.",
+    imageSrc: "../Screenshot 2025-07-26 114748.png",
+    websiteLink: "https://brandingfoliotemplate-ofaw-2f8ry1u1r-sunsunartos-projects.vercel.app/"
+  },
+  {
+    id: 12,
+    title: "My Art Space",
+    description: "The My Art Space app is a user-friendly interface that allows users introduce to one of my creation on making a portfolio website. ",
+    imageSrc: "../Screenshot 2025-07-26 122647.png",
+    websiteLink: "https://calculator-sunaryo.vercel.app/"
   }
 ];
 
