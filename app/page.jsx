@@ -7,8 +7,65 @@ const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 
+const projects = [
+  {
+    id: 1,
+    title: "Socio",
+    description: "The application named \"socio\" is a social media platform designed for user interaction and content sharing. It features a clean and structured interface, enabling users to post updates, add multimedia, and engage with trending discussions.",
+    imageSrc: "../Screenshot 2025-03-27 101644.png",
+    websiteLink: "https://quiz-16-sunaryo.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "Cerita Anekdot",
+    description: "The application appears to be a story-sharing website titled \"Cerita Anekdot\" (Anecdote Stories). It features a clean and user-friendly interface, allowing users to share their stories and engage in entertainment discussions.",
+    imageSrc: "../Screenshot 2025-03-27 105058.png",
+    websiteLink: "https://projekbi-3i6x.vercel.app/"
+  },
+  {
+    id: 3,
+    title: "Dessert Shop",
+    description: "The shop offers various desserts with images, names, and prices displayed. You also can buy a dessert by clicking the \"Comfirm Order\" button.",
+    imageSrc: "../Screenshot 2025-03-27 110325.png",
+    websiteLink: "https://post-management-app-939m.vercel.app/"
+  },
+  {
+    id: 4,
+    title: "User Management Post",
+    description: "A Post Management App with a clean and simple interface designed for handling user-generated posts.",
+    imageSrc: "../Screenshot 2025-03-27 112937.png",
+    websiteLink: "https://projekbi-3i6x.vercel.app/"
+  },
+  {
+    id: 5,
+    title: "User Authentication System",
+    description: "The application appears to be a user-friendly form interface designed for registration and login. It features a blue background with white text for easy readability. Users can choose between two options they are. This is not connected to database.",
+    imageSrc: "../Screenshot 2025-03-27 113854.png",
+    websiteLink: "https://user-authentication-system-ten.vercel.app/"
+  },
+  {
+    id: 6,
+    title: "Movie Collection",
+    description: "The application appears to be a story-sharing website titled \"Cerita Anekdot\" (Anecdote Stories). It features a clean and user-friendly interface, allowing users to share their stories and engage in entertainment discussions.",
+    imageSrc: "../Screenshot 2025-03-27 115030.png",
+    websiteLink: "https://projekbi-3i6x.vercel.app/"
+  },
+  {
+    id: 7,
+    title: "Charity Organization (Rebuild)",
+    description: "This website belongs to a charity organization dedicated to supporting homeless animals. we just rebuild it. for lesson",
+    imageSrc: "../Screenshot 2025-03-27 120319.png",
+    websiteLink: "https://quiz-gsap-scroll-trigger-bi21.vercel.app//"
+  }
+];
+
+const INITIAL_PROJECT_COUNT = 2;
+
 const App = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
+  const [visibleProjectsCount, setVisibleProjectsCount] = useState(INITIAL_PROJECT_COUNT);
+  const totalProjects = projects.length;
+  const isExpanded = visibleProjectsCount === totalProjects;
 
   const showDrawer = () => {
     setDrawerVisible(true);
@@ -16,6 +73,14 @@ const App = () => {
 
   const onCloseDrawer = () => {
     setDrawerVisible(false);
+  };
+
+  const toggleProjectsVisibility = () => {
+    if (isExpanded) {
+      setVisibleProjectsCount(INITIAL_PROJECT_COUNT);
+    } else {
+      setVisibleProjectsCount(totalProjects);
+    }
   };
 
   const companyProfileServices = [
@@ -60,47 +125,34 @@ const App = () => {
             font-family: 'Inter', sans-serif;
             background-color: #000; /* Main background color */
           }
-          #components-layout-demo-top .logo {
-            float: left;
-            width: 120px;
-            height: 31px;
-            margin: 16px 24px 16px 0;
-            background: rgba(255, 255, 255, 0.2);
-          }
-          .ant-row-rtl #components-layout-demo-top .logo {
-            float: right;
-            margin: 16px 0 16px 24px;
-          }
-          .site-layout-background {
-            background: #fff;
-          }
+          /* ... (Other existing styles) ... */
           .ant-layout-header {
-            background-color: #000 !important; /* Ensure header is black */
+            background-color: #000 !important;
             padding: 0 50px !important;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
           }
           .ant-menu {
-            background-color: #000 !important; /* Ensure menu is black */
+            background-color: #000 !important;
           }
           .ant-menu-item {
             color: rgba(255, 255, 255, 0.85) !important;
           }
           .ant-menu-item-selected {
-            color: #EBED8D !important; /* Accent color for selected item */
+            color: #EBED8D !important;
             background-color: rgba(255, 255, 255, 0.1) !important;
           }
           .ant-menu-item:hover {
-            color: #0060AF !important; /* Main brand color on hover */
+            color: #0060AF !important;
           }
           .ant-layout-content {
             padding: 0;
           }
           .site-layout-content {
-            min-height: calc(100vh - 134px); /* Adjust height based on header/footer */
+            min-height: calc(100vh - 134px);
             text-align: center;
           }
           .hero-section {
-            background: linear-gradient(to right, #0060AF, #336699); /* Blend of brand colors */
+            background: linear-gradient(to right, #0060AF, #336699);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -109,22 +161,22 @@ const App = () => {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
           }
           .service-item-container {
-            background: #1a1a1a; /* Dark gray for list item containers */
+            background: #1a1a1a;
             color: white;
             border-radius: 15px;
             padding: 30px;
-            margin-bottom: 32px; /* Space between list items */
+            margin-bottom: 32px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease-in-out;
-            border-left: 5px solid; /* Use border-left for list items */
-            text-align: left; /* Align text to left */
+            border-left: 5px solid;
+            text-align: left;
           }
           .service-item-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
           }
           .about-section {
-            background-color: #0d0d0d; /* Slightly lighter black for about section */
+            background-color: #0d0d0d;
             color: white;
             padding: 80px 20px;
             border-top-left-radius: 40px;
@@ -132,7 +184,7 @@ const App = () => {
             box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.3);
           }
           .call-to-action-section {
-            background: linear-gradient(to right, #336699, #0060AF); /* Another blend for CTA */
+            background: linear-gradient(to right, #336699, #0060AF);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -163,24 +215,67 @@ const App = () => {
             border-top-right-radius: 15px;
           }
 
-          /* Swiper Custom Styling removed */
-
+          /* New/Updated Project Section Styles */
+          .project-item {
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: top;
+            gap: 20px;
+            margin-bottom: 40px; /* Spacing between projects */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+          }
+          .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+          }
+          .project-image-col {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+          .project-text-col {
+            flex: 1 1 50%;
+            text-align: left;
+          }
+          .project-image {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+            display: block; /* ensure it behaves well in flexbox */
+          }
+          
           /* Responsive adjustments for smaller screens */
-          @media (max-width: 768px) {
+          @media (max-width: 991px) { /* Changed from 768px to ensure better stacking for tablets too */
             .ant-layout-header {
               padding: 0 20px !important;
             }
             .ant-menu-horizontal {
-              display: none !important; /* Hide horizontal menu on small screens */
+              display: none !important;
             }
             .mobile-menu-button {
-              display: block !important; /* Show hamburger button on small screens */
+              display: block !important;
             }
             .hero-section, .service-item-container, .about-section, .call-to-action-section, .contact-card {
               padding: 40px 15px;
             }
             .ant-layout-footer {
               padding: 20px;
+            }
+            
+            /* Project section responsiveness */
+            .project-item {
+              flex-direction: column; /* Stack image and text */
+              padding: 10px 0;
+              align-items: center; /* Center content when stacked */
+            }
+            .project-image-col {
+              flex: 0 0 100%;
+              max-width: 100%;
+              margin-bottom: 20px;
+            }
+            .project-text-col {
+              flex: 1 1 100%;
+              text-align: center; /* Center text on mobile */
             }
           }
           /* Hide hamburger menu on larger screens */
@@ -289,8 +384,7 @@ const App = () => {
           </section>
 
           <section id="services" style={{ padding: '80px 20px', backgroundColor: '#000' }}>
-            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Our Core Services</Title>
-            
+            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Our Core Services</Title>        
             <div className="service-item-container" style={{ borderColor: '#0060AF' }}>
               <Space direction="horizontal" align="start" size="middle">
                 <SolutionOutlined style={{ fontSize: '3em', color: '#0060AF' }} />
@@ -355,6 +449,51 @@ const App = () => {
             </div>
           </section>
         
+          <section className="projects-section" style={{ padding: '80px 20px', backgroundColor: '#0d0d0d' }}>
+            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Featured Projects</Title>
+            <div className="projects-list">
+              {projects.slice(0, visibleProjectsCount).map((project, index) => (
+                <div key={project.id} className="project-item">
+                  <div className="project-image-col">
+                    {index % 2 === 0 && ( 
+                      <img className="project-image" src={project.imageSrc} alt={project.title} />
+                    )}
+                    {index % 2 !== 0 && ( 
+                      <img className="project-image" src={project.imageSrc} alt={project.title} />
+                    )}
+                  </div>
+                  <div className="project-text-col">
+                    <Title level={1} style={{ color: 'white', fontSize: '2.5em', marginBottom: '10px' }}>{project.title}</Title>
+                    <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', display: 'block', marginBottom: '20px' }}>{project.description}</Text>
+                    <div className="button">
+                      <Button type="primary" size="large" style={{ backgroundColor: '#0060AF', borderColor: '#0060AF', fontWeight: 'bold' }} href={project.websiteLink} target="_blank">View Website</Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {totalProjects > INITIAL_PROJECT_COUNT && (
+              <Button
+                type="default"
+                size="large"
+                style={{
+                  marginTop: '30px',
+                  backgroundColor: isExpanded ? '#EBED8D' : '#0060AF',
+                  color: isExpanded ? '#000' : 'white',
+                  borderColor: isExpanded ? '#EBED8D' : '#0060AF',
+                  fontWeight: 'bold',
+                  borderRadius: '50px',
+                  padding: '10px 30px',
+                  height: 'auto'
+                }}
+                onClick={toggleProjectsVisibility}
+              >
+                {isExpanded ? 'Show Less' : `Show More (${totalProjects - INITIAL_PROJECT_COUNT} More)`}
+              </Button>
+            )}
+          </section>
+
           <section className="call-to-action-section">
             <Title level={3} style={{ color: 'white', marginBottom: 20, fontSize: '2.5em' }}>Ready to Elevate Your Online Presence?</Title>
             <Paragraph style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}>
@@ -382,72 +521,6 @@ const App = () => {
             </Button>
           </section>
 
-          <section className="projects-section">
-            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Project</Title>
-            <div className="projets">
-              <div className="1" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 101644.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                  <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>Socio</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}> The application named "socio" is a social media platform designed for user interaction and content sharing. It features a clean and structured interface, enabling users to post updates, add multimedia, and engage with trending discussions.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://quiz-16-sunaryo.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="2" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 105058.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                  <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>Cerita Anekdot</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}> The application appears to be a story-sharing website titled "Cerita Anekdot" (Anecdote Stories). It features a clean and user-friendly interface, allowing users to share their stories and engage in entertainment discussions.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://projekbi-3i6x.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="3" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 110325.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                  <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>Dessert Shop</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}>The shop offers various desserts with images, names, and prices displayed. You also can buy a dessert by clicking the "Comfirm Order" button.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://post-management-app-939m.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="4" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 112937.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                  <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>User Management Post</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}>A Post Management App with a clean and simple interface designed for handling user-generated posts.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://projekbi-3i6x.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="5" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 113854.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>User Authentication System</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}>The application appears to be a user-friendly form interface designed for registration and login. It features a blue background with white text for easy readability. Users can choose between two options they are. This is not connected to database.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://user-authentication-system-ten.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="6" style={{ padding: "10px", display: "flex", flexDirection: "row", alignItems: "top", gap: "20px" }}>
-                <img style={{ width: '50%', borderRadius: '10px' }} src="../Screenshot 2025-03-27 115030.png" alt="" />
-                <div className="text" style={{ textAlign: "left" }}>
-                  <Title level={1} style={{ color: 'white', fontSize: '2.5em' }}>Movie Collection</Title>
-                  <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.2em', maxWidth: '800px', margin: '20px auto' }}> The application appears to be a story-sharing website titled "Cerita Anekdot" (Anecdote Stories). It features a clean and user-friendly interface, allowing users to share their stories and engage in entertainment discussions.</Text>
-                  <div className="button" style={{ marginTop: '20px' }}>
-                    <Button type="primary" href ="https://projekbi-3i6x.vercel.app/">Website</Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section id="contact" style={{ padding: '80px 20px', backgroundColor: '#000' }}>
             <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Get in Touch</Title>
             <Row gutter={[32, 32]} justify="center">
@@ -457,7 +530,7 @@ const App = () => {
                     <MailOutlined style={{ fontSize: '4em', color: '#0060AF' }} />
                     <Title level={4} style={{ color: 'white', margin: 0 }}>Email Us</Title>
                     <Paragraph style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      <a href="mailto:Filipayotech@gmail.com" style={{ color: '#EBED8D' }}>info@filipayo.com</a>
+                      <a href="mailto:filipayotech@gmail.com" style={{ color: '#EBED8D' }}>filipayotech@gmail.com</a>
                     </Paragraph>
                   </Space>
                 </Card>
@@ -469,6 +542,7 @@ const App = () => {
                     <Title level={4} style={{ color: 'white', margin: 0 }}>Call Us</Title>
                     <Paragraph style={{ color: 'rgba(255,255,255,0.7)' }}>
                       <a href="https://wa.me/+6285934427040" style={{ color: '#0060AF' }}>+6285934427040</a>
+                      <br/>
                       <a href="https://wa.me/+6281514495675" style={{ color: '#0060AF' }}>+6281514495675</a>
                     </Paragraph>
                   </Space>
@@ -480,7 +554,7 @@ const App = () => {
                     <PushpinOutlined style={{ fontSize: '4em', color: '#FF6F00' }} />
                     <Title level={4} style={{ color: 'white', margin: 0 }}>Visit Us</Title>
                     <Paragraph style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      123 Web Dev Street, Tech City, Digital Land
+                      Ruko Crown Blok G-15. Green Lake City, Jl. Kresek Raya, Petir, Cipondoh, RT.004/RW.008, Petir, Cipondoh, Tangerang City, Banten 15147
                     </Paragraph>
                   </Space>
                 </Card>
