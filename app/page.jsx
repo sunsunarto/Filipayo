@@ -293,7 +293,7 @@ const App = () => {
           <div className="logo" />
           <Row justify="space-between" align="middle">
             <Col>
-              <Title level={1} style={{ color: '#0060AF', margin: 0, padding: '10px 0' }}>Filipayo</Title>
+              <Title level={1} style={{ color: '#0060AF', margin: 0, padding: '10px 0' }}>Filipayo <span style={{ color: '#EBED8D' }}>Tech</span><span style={{ color: 'white' }}> | Profile</span></Title>
             </Col>
             <Col>
               <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
