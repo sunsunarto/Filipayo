@@ -46,7 +46,7 @@ const projects = [
   {
     id: 6,
     title: "Movie Collection",
-    description: "The application appears to be a story-sharing website titled \"Cerita Anekdot\" (Anecdote Stories). It features a clean and user-friendly interface, allowing users to share their stories and engage in entertainment discussions.",
+    description: "this is a website about movie collection. this website is not connected to API (Application Programming Interface). you can search any movie you want. but you can't watch just see about the movies.",
     imageSrc: "../Screenshot 2025-03-27 115030.png",
     websiteLink: "https://projekbi-3i6x.vercel.app/"
   },
