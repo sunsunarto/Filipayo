@@ -715,7 +715,7 @@ const App = () => {
            <Row gutter={[32, 32]} justify="space-between">
              {/* Company Info */}
              <Col xs={24} md={12} lg={8} style={{ textAlign: 'left' }}>
-               <Title level={3} style={{ color: '#0060AF', margin: 0 }}>code<span style={{ color: '#EBED8D' }}>ORCA</span></Title>
+               <Title level={3} style={{ color: '#0060AF', margin: 0 }}>Filipayo<span style={{ color: '#EBED8D' }}>Tech</span></Title>
                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: '15px' }}>
                  Kami adalah perusahaan teknologi yang berfokus pada pengembangan solusi software modern dan inovatif untuk membantu bisnis bertransformasi digital.
                </Paragraph>
@@ -754,7 +754,7 @@ const App = () => {
 
            {/* Bottom Bar */}
            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '24px', marginTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-             <Text style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>&copy; {new Date().getFullYear()} codeORCA. All rights reserved.</Text>
+             <Text style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>&copy; {new Date().getFullYear()} Filipayo. All rights reserved.</Text>
              <Space size="large">
                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>Privacy Policy</a>
                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>Terms of Service</a>
