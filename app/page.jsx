@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Layout, Menu, Button, Typography, Card, Row, Col, Space, Drawer, List } from 'antd';
-import { MailOutlined, PhoneOutlined, PushpinOutlined, MenuOutlined, SolutionOutlined, ShoppingCartOutlined, CloudServerOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import { MailOutlined, PhoneOutlined, PushpinOutlined, MenuOutlined, SolutionOutlined, ShoppingCartOutlined, CloudServerOutlined, CheckCircleOutlined, EyeOutlined, UserOutlined, StarFilled, GlobalOutlined, ExportOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text } = Typography;
@@ -100,6 +100,28 @@ const projects = [
     websiteLink: "https://calculator-sunaryo.vercel.app/"
   }
 ];
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Darmawan",
+    company: "CEO, Tech Solutions Inc.",
+    quote: "Filipayo Tech delivered a fantastic website for our company. The design is modern, and the performance is outstanding. They were professional and a pleasure to work with.",
+  },
+  {
+    id: 2,
+    name: "Suryani",
+    company: "Founder, Creative Agency",
+    quote: "Our new portfolio website is a game-changer. The team at Filipayo understood our vision perfectly and brought it to life with great attention to detail. Highly recommend!",
+  },
+  {
+    id: 3,
+    name: "Ardiansyah",
+    company: "Marketing Manager, E-Shop",
+    quote: "We needed a robust e-commerce platform, and Filipayo Tech delivered. The site is fast, secure, and easy to manage. Our sales have seen a significant increase since the launch.",
+  },
+];
+
 
 const INITIAL_PROJECT_COUNT = 2;
 
@@ -285,6 +307,37 @@ const App = () => {
             height: auto;
             display: block; /* ensure it behaves well in flexbox */
           }
+
+          /* New section styles */
+          .vision-mission-section {
+            padding: 80px 20px;
+            background-color: #0d0d0d;
+          }
+          .vision-mission-card {
+            background: #1a1a1a;
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            height: 100%; /* Ensure cards have the same height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          .testimonial-section {
+            padding: 80px 20px;
+            background-color: #0d0d0d;
+          }
+          .testimonial-card {
+            background: #1a1a1a;
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            height: 100%;
+            text-align: center;
+          }
           
           /* Responsive adjustments for smaller screens */
           @media (max-width: 991px) { /* Changed from 768px to ensure better stacking for tablets too */
@@ -342,7 +395,8 @@ const App = () => {
                 <Menu.Item key="1"><a href="#home">Home</a></Menu.Item>
                 <Menu.Item key="2"><a href="#about">About Us</a></Menu.Item>
                 <Menu.Item key="3"><a href="#services">Services</a></Menu.Item>
-                <Menu.Item key="4"><a href="#contact">Contact</a></Menu.Item>
+                <Menu.Item key="4"><a href="#projects">Projects</a></Menu.Item>
+                <Menu.Item key="5"><a href="#contact">Contact</a></Menu.Item>
               </Menu>
 
               <Button
@@ -371,7 +425,8 @@ const App = () => {
             <Menu.Item key="1"><a href="#home">Home</a></Menu.Item>
             <Menu.Item key="2"><a href="#about">About Us</a></Menu.Item>
             <Menu.Item key="3"><a href="#services">Services</a></Menu.Item>
-            <Menu.Item key="4"><a href="#contact">Contact</a></Menu.Item>
+            <Menu.Item key="4"><a href="#projects">Projects</a></Menu.Item>
+            <Menu.Item key="5"><a href="#contact">Contact</a></Menu.Item>
           </Menu>
         </Drawer>
 
@@ -404,6 +459,30 @@ const App = () => {
             >
               Get Your Free Consultation
             </Button>
+          </section>
+
+          <section id="vision-mission" className="vision-mission-section">
+            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Vision and Mission</Title>
+            <Row gutter={[32, 32]} justify="center">
+              <Col xs={24} md={12}>
+                <Card className="vision-mission-card">
+                  <EyeOutlined style={{ fontSize: '4em', color: '#EBED8D' }} />
+                  <Title level={4} style={{ color: 'white', marginTop: 16 }}>Our Vision</Title>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1em', textAlign: 'center' }}>
+                    To be the leading website development partner in Indonesia, empowering businesses of all sizes to thrive in the digital landscape with innovative and impactful solutions.
+                  </Paragraph>
+                </Card>
+              </Col>
+              <Col xs={24} md={12}>
+                <Card className="vision-mission-card">
+                  <StarFilled style={{ fontSize: '4em', color: '#0060AF' }} />
+                  <Title level={4} style={{ color: 'white', marginTop: 16 }}>Our Mission</Title>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1em', textAlign: 'center' }}>
+                    We are dedicated to building high-quality, user-friendly, and cost-effective websites that meet our clients' specific needs, while providing exceptional service and technical support.
+                  </Paragraph>
+                </Card>
+              </Col>
+            </Row>
           </section>
 
           <section id="about" className="about-section">
@@ -491,7 +570,7 @@ const App = () => {
             </div>
           </section>
         
-          <section className="projects-section" style={{ padding: '80px 20px', backgroundColor: '#0d0d0d' }}>
+          <section id="projects" className="projects-section" style={{ padding: '80px 20px', backgroundColor: '#0d0d0d' }}>
             <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>Featured Projects</Title>
             <div className="projects-list">
               {projects.slice(0, visibleProjectsCount).map((project, index) => (
@@ -602,17 +681,88 @@ const App = () => {
                 </Card>
               </Col>
             </Row>
-
           </section>
+
+          <section id="testimonials" className="testimonial-section">
+            <Title level={3} style={{ color: 'white', marginBottom: 50, fontSize: '2.5em' }}>What Our Clients Say</Title>
+            <Row gutter={[32, 32]} justify="center">
+              {testimonials.map((testimonial) => (
+                <Col key={testimonial.id} xs={24} md={8}>
+                  <Card className="testimonial-card">
+                    <StarFilled style={{ fontSize: '2em', color: '#EBED8D', marginBottom: '10px' }} />
+                    <StarFilled style={{ fontSize: '2em', color: '#EBED8D', marginBottom: '10px' }} />
+                    <StarFilled style={{ fontSize: '2em', color: '#EBED8D', marginBottom: '10px' }} />
+                    <StarFilled style={{ fontSize: '2em', color: '#EBED8D', marginBottom: '10px' }} />
+                    <StarFilled style={{ fontSize: '2em', color: '#EBED8D', marginBottom: '10px' }} />
+                    <Paragraph style={{ color: 'rgba(255,255,255,0.85)', fontStyle: 'italic', fontSize: '1.1em' }}>
+                      "{testimonial.quote}"
+                    </Paragraph>
+                    <Paragraph style={{ color: 'white', fontWeight: 'bold', margin: '20px 0 5px' }}>
+                      <UserOutlined style={{ marginRight: '8px' }}/> {testimonial.name}
+                    </Paragraph>
+                    <Paragraph style={{ color: 'rgba(255,255,255,0.6)' }}>
+                      {testimonial.company}
+                    </Paragraph>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </section>
+
         </Content>
 
-        <Footer>
-          <Text style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '1em' }}>&copy; {new Date().getFullYear()} Filipayo. All rights reserved.</Text>
-          <div style={{ marginTop: '10px' }}>
-            <a href="#" style={{ color: 'rgba(255, 255, 255, 0.6)', marginRight: '20px' }}>Privacy Policy</a>
-            <a href="#" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Terms of Service</a>
-          </div>
-        </Footer>
+        <Footer style={{ backgroundColor: '#0A1929', color: 'rgba(255, 255, 255, 0.85)', padding: '50px 50px 24px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px' }}>
+           <Row gutter={[32, 32]} justify="space-between">
+             {/* Company Info */}
+             <Col xs={24} md={12} lg={8} style={{ textAlign: 'left' }}>
+               <Title level={3} style={{ color: '#0060AF', margin: 0 }}>code<span style={{ color: '#EBED8D' }}>ORCA</span></Title>
+               <Paragraph style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: '15px' }}>
+                 Kami adalah perusahaan teknologi yang berfokus pada pengembangan solusi software modern dan inovatif untuk membantu bisnis bertransformasi digital.
+               </Paragraph>
+               <Space size="middle" style={{ marginTop: '20px' }}>
+                 <MailOutlined style={{ fontSize: '24px', color: 'rgba(255, 255, 255, 0.85)' }} />
+                 <PhoneOutlined style={{ fontSize: '24px', color: 'rgba(255, 255, 255, 0.85)' }} />
+               </Space>
+             </Col>
+
+             {/* Quick Links */}
+             <Col xs={24} md={6} lg={4} style={{ textAlign: 'left' }}>
+               <Title level={4} style={{ color: 'white', marginBottom: '20px' }}>Quick Links</Title>
+               <List
+                 dataSource={['Home', 'About', 'Services', 'Projects']}
+                 renderItem={item => (
+                   <List.Item style={{ borderBottom: 'none', padding: '5px 0' }}>
+                     <a href={`#${item.toLowerCase()}`} style={{ color: 'rgba(255, 255, 255, 0.7)' }}>{item}</a>
+                   </List.Item>
+                 )}
+               />
+             </Col>
+
+             {/* Services */}
+             <Col xs={24} md={6} lg={4} style={{ textAlign: 'left' }}>
+               <Title level={4} style={{ color: 'white', marginBottom: '20px' }}>Services</Title>
+               <List
+                 dataSource={['Web Development', 'E-Commerce Solutions', 'Performance Optimization', 'UI/UX Design']}
+                 renderItem={item => (
+                   <List.Item style={{ borderBottom: 'none', padding: '5px 0' }}>
+                     <a href={`#services`} style={{ color: 'rgba(255, 255, 255, 0.7)' }}>{item}</a>
+                   </List.Item>
+                 )}
+               />
+             </Col>
+           </Row>
+
+           {/* Bottom Bar */}
+           <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '24px', marginTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+             <Text style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>&copy; {new Date().getFullYear()} codeORCA. All rights reserved.</Text>
+             <Space size="large">
+               <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>Privacy Policy</a>
+               <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9em' }}>Terms of Service</a>
+               <GlobalOutlined style={{ fontSize: '18px', color: 'rgba(255, 255, 255, 0.7)' }} />
+               <ExportOutlined style={{ fontSize: '18px', color: 'rgba(255, 255, 255, 0.7)' }} />
+             </Space>
+           </div>
+         </Footer>
       </Layout>
     </>
   );
